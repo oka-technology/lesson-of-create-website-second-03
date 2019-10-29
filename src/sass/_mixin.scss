@@ -1,0 +1,29 @@
+@mixin spLinkItem {
+  border-bottom: 1px solid #707070;
+
+  &:first-child {
+    border-top: 1px solid #707070;
+  }
+}
+
+@mixin spLinkItemAnchor {
+  align-items: center;
+  background-color: #fff;
+  color: black;
+  display: flex;
+  font-size: 1.6rem;
+  height: 7rem;
+  justify-content: space-between;
+  padding: 0 2.6rem;
+  width: calc(100% - 2.6rem * 2);
+
+  &::after {
+    border-right: 0.3rem solid #ccc;
+    border-bottom: 0.3rem solid #ccc;
+    content: '';
+    display: block;
+    transform: rotate(-45deg);
+    height: 0.9rem;
+    width: 0.9rem;
+  }
+}

@@ -1,0 +1,95 @@
+.priceTable {
+  font-size: 1.4rem;
+  margin: 1.7rem 2rem;
+  max-width: 96rem;
+  text-align: center;
+  width: calc(100% - 4rem);
+
+  &__head {
+    @include thirdLarger {
+      display: none;
+    }
+  }
+
+  &__row {
+    height: 4.2rem;
+
+    @include thirdLarger {
+      display: flex;
+      height: auto;
+      flex-direction: column;
+
+      &:not(:first-child) {
+        margin-top: 2rem;
+      }
+    }
+
+    &__th {
+      background-color: #333;
+      border: 1px solid #ccc;
+      color: white;
+      font-weight: normal;
+      vertical-align: middle;
+    }
+
+    &__td {
+      border: 1px solid #ccc;
+      vertical-align: middle;
+
+      @include thirdLarger {
+        align-items: center;
+        display: flex;
+        height: 4.2rem;
+        justify-content: center;
+
+        &:first-child {
+          background-color: #333;
+          color: white;
+        }
+
+        &:not(:first-child) {
+          border-top: none;
+        }
+
+        &:nth-child(2n+3) {
+          background-color: #f5f5f5;
+        }
+
+        &::before {
+          content: attr(data-label);
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  &__body>&__row:nth-child(odd)>&__row__td:first-child {
+    @include firstLarger {
+      background-color: #F0F4F7;
+    }
+
+    @include secondLarger {
+      background-color: #F0F4F7;
+    }
+  }
+
+  &__body>&__row:nth-child(even)>&__row__td:first-child {
+    @include firstLarger {
+      background-color: #E7E9EC;
+    }
+
+    @include secondLarger {
+      background-color: #E7E9EC;
+    }
+  }
+
+  &__body>&__row:nth-child(even)>&__row__td:not(:first-child) {
+    @include firstLarger {
+      background-color: #F5F5F5;
+    }
+
+    @include secondLarger {
+      background-color: #F5F5F5;
+    }
+  }
+}

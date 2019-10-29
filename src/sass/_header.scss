@@ -1,0 +1,34 @@
+.header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 7rem max-content;
+  height: 7rem;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 96rem;
+
+  &__logo {
+    align-self: center;
+    margin-left: 1.8rem;
+    width: 29.3rem;
+  }
+
+  &__nav {
+    align-self: center;
+    justify-self: end;
+
+    @include thirdLarger {
+      display: none;
+    }
+
+    &--open {
+      @include thirdLarger {
+        display: block;
+        grid-column: 1 / 3;
+        justify-self: stretch;
+        position: relative;
+        z-index: 9999;
+      }
+    }
+  }
+}

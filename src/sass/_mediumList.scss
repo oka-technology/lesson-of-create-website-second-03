@@ -1,0 +1,44 @@
+.mediumList {
+  display: grid;
+  gap: 4rem;
+  margin: 6rem auto;
+  width: max-content;
+
+  @include firstLarger {
+    grid-template-columns: repeat(3, 28rem);
+  }
+
+  @include secondLarger {
+    grid-template-columns: repeat(2, 28rem);
+  }
+
+  @include thirdLarger {
+    width: calc(100% - 4rem);
+    grid-template-columns: 100%;
+  }
+
+  &__item {
+    &__title {
+      align-items: center;
+      background-color: #333;
+      color: white;
+      display: flex;
+      font-size: 1.8rem;
+      font-weight: normal;
+      height: 4rem;
+      justify-content: center;
+    }
+    
+
+    &__paragraph {
+      font-size: 1.4rem;
+      line-height: 2.4rem;
+      margin: 1.6rem auto;
+      width: 26rem;
+
+      @include thirdLarger{
+        width: auto;
+      }
+    }
+  }
+}

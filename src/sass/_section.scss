@@ -1,0 +1,17 @@
+.section {
+  margin: 6rem auto;
+  max-width: 96rem;
+  width: calc(100% - 4rem);
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-bottom: 6rem;
+    text-align: center;
+  }
+
+  &__paragraph {
+    font-size: 1.4rem;
+    margin: 1.5rem 2rem 0;
+  }
+}

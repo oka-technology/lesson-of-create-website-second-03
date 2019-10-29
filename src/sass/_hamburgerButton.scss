@@ -1,0 +1,48 @@
+$button-size: 3.6rem;
+
+.hamburgerButton {
+  @include firstLarger {
+    display: none;
+  }
+
+  @include secondLarger {
+    display: none;
+  }
+
+  align-self: center;
+  border: 0.2rem solid #333;
+  display: flex;
+  flex-direction: column;
+  height: $button-size;
+  justify-content: center;
+  justify-self: end;
+  margin-right: 1.5rem;
+  width: $button-size;
+
+  &--active {
+    &>.hamburgerButton__line:nth-of-type(1) {
+      transform: translateY(1.1rem) rotate(45deg);
+    }
+
+    &>.hamburgerButton__line:nth-of-type(2) {
+      opacity: 0;
+    }
+
+    &>.hamburgerButton__line:nth-of-type(3) {
+      transform: translateY(-1.1rem) rotate(-45deg);
+    }
+  }
+
+  &__line {
+    background-color: #333;
+    display: block;
+    height: 0.2rem;
+    margin: 0 auto;
+    transition: all .4s;
+    width: 2.6rem;
+
+    &+& {
+      margin-top: 0.9rem;
+    }
+  }
+}

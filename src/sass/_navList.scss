@@ -1,0 +1,46 @@
+.navList {
+  align-items: center;
+  display: flex;
+  justify-self: end;
+  margin-right: 1rem;
+  width: max-content;
+
+  @include firstLarger {
+    margin-right: 0;
+  }
+
+  @include thirdLarger {
+    display: block;
+    width: 100%;
+  }
+
+  &__item {
+    @include thirdLarger {
+      @include spLinkItem;
+      &:last-child {
+        display: none;
+      }
+    }
+
+    &__anchor {
+      align-items: center;
+      color: black;
+      display: flex;
+      font-size: 1.2rem;
+      height: 3.5rem;
+      justify-content: center;
+      width: 7.6rem;
+
+      @include thirdLarger {
+        @include spLinkItemAnchor;
+      }
+
+      &--apply {
+        @extend .navList__item__anchor;
+        background-color: $orange;
+        border-radius: 0.5rem;
+        color: white;
+      }
+    }
+  }
+}

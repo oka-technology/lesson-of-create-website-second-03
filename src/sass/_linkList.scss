@@ -1,0 +1,34 @@
+.linkList {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 92rem;
+  width: calc(100% - 8rem);
+
+  @include thirdLarger {
+    display: block;
+    width: 100%;
+  }
+
+  &__item {
+    font-size: 1.4rem;
+    @include thirdLarger {
+      @include spLinkItem;
+    }
+
+    & + & {
+      margin-left: 1rem;
+      @include thirdLarger {
+        margin-left: 0;
+      }
+    }
+    &__anchor {
+      color: white;
+      @include thirdLarger {
+        @include spLinkItemAnchor;
+      }
+    }
+  }
+
+}
